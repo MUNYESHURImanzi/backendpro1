@@ -3,7 +3,7 @@ import cors from "cors"
 import Welcome from "./controllers/welcome.js";
 import articles from "./routes/articles.js"
 import users from "./routes/articles.js"
-import comments from "./routes/comments.js"
+
 import names from"./routes/articles.js"
 import mongoose from "mongoose";
 import signup from './routes/register.js'
@@ -21,9 +21,9 @@ app.get("/api/v1",Welcome)
 
 app.use("/api/v1/articles", articles)
 app.use("/api/v1/",users)
-app.use("/api/v1/",comments)
+
 app.use("/api/v1/",names)
-app.use("/api/v1",signup)
+app.use("/api/v1/signup",signup)
 app.use("/api/v1",signin)
 app.use("/api/v1",readArticleLimit)
 
