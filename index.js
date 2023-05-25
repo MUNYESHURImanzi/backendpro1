@@ -16,6 +16,7 @@ app.use(cors())
 
 
 
+
 app.get("/api/v1",Welcome)
 
 app.use("/api/v1/articles", articles)
@@ -28,7 +29,7 @@ app.use("/api/v1",readArticleLimit)
 
 
 const connectTomongoDb=()=>{
-    mongoose.connect("mongodb+srv://mugishaelvis456:umugishamwiza@cluster0.0ooycod.mongodb.net/?retryWrites=true&w=majority")
+    mongoose.connect("mongodb+srv://munyeshurimanzi:Munyeshuri1@cluster0.yqd0pr4.mongodb.net/?retryWrites=true&w=majority")
 
     .then(()=>{
         console.log("mongodb connected")
