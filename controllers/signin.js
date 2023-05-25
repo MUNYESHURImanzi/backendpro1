@@ -1,11 +1,23 @@
-import signUp from '../models/register.js';
+import SignUp from '../models/register.js';
 import signIn from '../models/signin.js';
+import bcrypt from "bcrypt"
 
 const signInController = async (req, res) => {
   try {
     const data = req.body;
-    const check = await signUp.findOne({ email: data.email });
+    const check = await SignUp.findOne({ email: data.email });
+    const pass=data.password
+    
     if (check) {
+      let user=bcrypt.compare(pass,check.password)
+       if(user==true) {
+        res.send("it is true")
+
+       }else{
+        res.send("your password is wrong")
+       }
+      
+       
       return res.status(409).json({
         message: "Welcome to home",
       });

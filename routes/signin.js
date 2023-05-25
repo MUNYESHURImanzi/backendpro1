@@ -8,7 +8,7 @@ const router=express.Router()
 router.use(bodyParser.json())
 
 
-router.post("/signin",signin)
+router.get("/signin",signin)
 
 
 export default router
