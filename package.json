@@ -10,7 +10,7 @@
     "dev": "nodemon --exec npm run complie",
     "start": "babel-node index.js"
   },
-  "author": "Elvis",
+  "author": "munyeshuri",
   "license": "ISC",
   "dependencies": {
     "@babel/cli": "^7.21.5",

@@ -3,7 +3,7 @@ import cors from "cors"
 import Welcome from "./controllers/welcome.js";
 import articles from "./routes/articles.js"
 import users from "./routes/articles.js"
-
+import dotenv from "dotenv"
 import names from"./routes/articles.js"
 import mongoose from "mongoose";
 import signup from './routes/register.js'
@@ -26,10 +26,11 @@ app.use("/api/v1/",names)
 app.use("/api/v1/signup",signup)
 app.use("/api/v1",signin)
 app.use("/api/v1",readArticleLimit)
-
+dotenv.config()
 
 const connectTomongoDb=()=>{
-    mongoose.connect("mongodb+srv://munyeshurimanzi:Munyeshuri1@cluster0.yqd0pr4.mongodb.net/?retryWrites=true&w=majority")
+
+    mongoose.connect("mongodb+srv://"+process.env.MONGODB_USERNAME+":"+process.env.MONGODB_PASSWORD+"@cluster0.yqd0pr4.mongodb.net/?retryWrites=true&w=majority")
 
     .then(()=>{
         console.log("mongodb connected")
